@@ -37,6 +37,11 @@ class HAProxyLexer(RegexLexer):
              r'(\]:)(\d+)',
              bygroups(Punctuation, Number, Number, Punctuation,
                       Number)),  # IPv6 with port
+            (r'(\[)'
+             r'(::1)'
+             r'(\]:)(\d+)',
+             bygroups(Punctuation, Number, Punctuation,
+                      Number)),  # IPv6 with port
             (r'[a-f0-9]{4}:[a-f0-9:]+(:\d+\.\d+\.\d+\.\d+)?(/\d+)?',
              Number),  # IPv6 or IPv6 CIDR
             (r'(\d+\.\d+\.\d+\.\d+)(:)(\d+)',
